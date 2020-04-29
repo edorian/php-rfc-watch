@@ -132,7 +132,10 @@ class RfcList extends React.Component {
         }
 
         return <div>
-            <h2 className="text-lg font-semibold mb-2 p-2 uppercase">{this.props.title}</h2>
+            <h2 name={this.props.title} className="text-lg font-semibold mb-2 p-2 uppercase">
+                <a href={'#' + this.props.title} className="text-muted">#</a> 
+                {this.props.title}
+            </h2>
             <div className="rfc-list flex flex-col flex-wrap items-start mb-10">
                 {this.props.rfcs.map(item => { return <RfcVoteItem key={item.id} rfc={item} /> })}
             </div>
